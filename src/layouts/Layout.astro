@@ -1,0 +1,124 @@
+---
+interface Props {
+  ogp_img: string
+}
+
+const isDev = import.meta.env.DEV;
+const { ogp_img } = Astro.props
+
+const metaTitle = isDev 
+  ? 'Your Site Title - Local Dev' 
+  : 'Your Site Title'
+const metaDescription = 'Your site description'
+const metaPublishURL = 'https://yourdomain.com/'
+const metaPublishBase = '/'
+---
+
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>{metaTitle}</title>
+    <meta name="description" content={metaDescription}>
+    <link rel="canonical" href={metaPublishURL}>
+    
+    <link rel="icon" type="image/png" href={`${metaPublishBase}favicon.png`} sizes="512x512">
+    <link rel="apple-touch-icon" href={`${metaPublishBase}favicon.png`}>
+
+    <meta property="og:title" content={metaTitle}>
+    <meta property="og:description" content={metaDescription}>
+    <meta property="og:url" content={metaPublishURL}>
+    <meta property="og:image" content={`${metaPublishURL}${ogp_img}`}>
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content={metaTitle}>
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content={`${metaPublishURL}${ogp_img}`}>
+    <meta name="twitter:url" content={metaPublishURL}>
+    <meta name="twitter:title" content={metaTitle}>
+    <meta name="twitter:description" content={metaDescription}>
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
+
+<style is:global>
+:root {
+	--vwpx: 1vw;
+	--transition-time: 0.3s;
+
+  --color-bg: rgba(255, 255, 0, 1);
+  --color-fg: rgba(0, 0, 0, 1);
+  /* --font-size-base: 16px; */
+  /* --line-height-base: 1.5; */
+
+  @media (--desktop) {
+    --vwpx: calc(520px / 100);
+  }
+}
+
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+
+::selection {
+	background: rgb(var(--color-fg));
+	color: rgb(var(--color-bg));
+}
+
+/* https://stackoverflow.com/a/71268988 */
+html {
+	max-width: 100vw;
+	/* overflow-x: clip; */
+	/* height: 100vh; */
+	/* height: 100%; */
+	/* overflow: hidden; */
+	overflow-y: scroll;
+	visibility: unset !important;
+
+  background-color: var(--color-bg);
+  color: var(--color-fg);
+}
+body {
+	visibility: unset !important;
+	max-width: 100vw;
+	overflow: clip;
+  display: grid;
+  font-family: var(--font);
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: "palt" 1;
+	color: rgb(var(--foreground-rgb));
+	background: rgb(var(--background-rgb));
+}
+
+img {
+	display: block;
+	margin: 0;
+	padding: 0;
+	height: auto;
+}
+
+.br-pc {
+	display: none;
+}
+@media (--desktop) {
+	.br-pc {
+	display: inline;
+	}
+}
+
+.br-sp {
+	display: inline;
+}
+@media (--desktop) {
+	.br-sp {
+	display: none;
+	}
+}
+</style>
