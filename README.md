@@ -1,6 +1,6 @@
 # Astro.js Template
 
-A modern Astro.js template with React, PostCSS.
+An Astro.js template with React, PostCSS.
 
 ## Tech Stack
 - Astro.js
