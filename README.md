@@ -3,6 +3,7 @@
 An Astro.js template with React, PostCSS.
 
 ## Tech Stack
+- Bun
 - Astro.js
 - React
 - PostCSS with custom functions

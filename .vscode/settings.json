@@ -3,4 +3,6 @@
     },
     "files.eol": "auto",
     "editor.links": true,
+    "npm.scriptRunner": "bun",
+    "npm.packageManager": "bun",
 }
