@@ -14,10 +14,8 @@
     "@astrojs/check": "^0.9.4",
     "@astrojs/react": "^4.4.0",
     "@csstools/postcss-global-data": "^3.1.0",
-    "@vercel/edge": "^1.2.2",
     "@vitejs/plugin-basic-ssl": "^2.1.0",
     "astro": "^5.14.6",
-    "body-scroll-lock": "^4.0.0-beta.0",
     "classnames": "^2.5.1",
     "cssnano": "^7.1.1",
     "events": "^3.3.0",
@@ -43,7 +41,6 @@
   },
   "devDependencies": {
     "@biomejs/biome": "2.2.6",
-    "@types/body-scroll-lock": "^3.1.2",
     "@types/lodash": "^4.17.20",
     "@types/node": "^24.8.1"
   },
