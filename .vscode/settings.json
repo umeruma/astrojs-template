@@ -1,8 +1,12 @@
 {
-    "workbench.colorCustomizations": {
-    },
-    "files.eol": "auto",
-    "editor.links": true,
-    "npm.scriptRunner": "bun",
-    "npm.packageManager": "bun",
+  "workbench.colorCustomizations": {
+  },
+  "files.eol": "auto",
+  "editor.links": true,
+  "npm.scriptRunner": "bun",
+  "npm.packageManager": "bun",
+  "editor.codeActionsOnSave": {
+    "source.organizeImports.biome": "explicit",
+    "source.fixAll.biome": "explicit"
+  }
 }
