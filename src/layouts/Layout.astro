@@ -6,8 +6,8 @@ interface Props {
 const isDev = import.meta.env.DEV;
 const { ogp_img } = Astro.props
 
-const metaTitle = isDev 
-  ? 'Your Site Title - Local Dev' 
+const metaTitle = isDev
+  ? 'Your Site Title - Local Dev'
   : 'Your Site Title'
 const metaDescription = 'Your site description'
 const metaPublishURL = 'https://yourdomain.com/'
@@ -23,7 +23,7 @@ const metaPublishBase = '/'
     <title>{metaTitle}</title>
     <meta name="description" content={metaDescription}>
     <link rel="canonical" href={metaPublishURL}>
-    
+
     <link rel="icon" type="image/png" href={`${metaPublishBase}favicon.png`} sizes="512x512">
     <link rel="apple-touch-icon" href={`${metaPublishBase}favicon.png`}>
 
