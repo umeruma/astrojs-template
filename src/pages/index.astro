@@ -13,15 +13,16 @@ import Layout from '../layouts/Layout.astro';
   <p>Template</p>
 </Layout>
 
-<script>
+<script type="module">
 // import Lenis from 'lenis'
-// import { UAParser } from 'ua-parser-js';
+// import Bowser from 'bowser'
 
 // history.scrollRestoration = 'manual'
 
-// const { device } = UAParser(navigator.userAgent);
+// const parser = Bowser.getParser(window.navigator.userAgent)
+// const platformType = parser.getPlatformType()
 
-// if (device.is('mobile') || device.is('tablet')) {
+// if (platformType === 'mobile' || platformType === 'tablet') {
 //   // モバイルデバイスではLenisを無効化
 // } else {
 //   const lenis = new Lenis({
