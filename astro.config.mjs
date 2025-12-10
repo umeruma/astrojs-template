@@ -1,5 +1,10 @@
 import { defineConfig, passthroughImageService } from 'astro/config'
 import react from '@astrojs/react'
+import license from "rollup-plugin-license";
+import { join } from "node:path";
+import { fileURLToPath } from "node:url";
+
+const __dirname = fileURLToPath(new URL('.', import.meta.url));
 
 const assetsBase = ''
 
@@ -25,6 +30,17 @@ export default defineConfig({
       ]
     },
     plugins: [
+      license({
+        sourcemap: true,
+        thirdParty: {
+          includePrivate: true,
+          multipleVersions: true,
+          output: {
+            file: join(__dirname, "dist", "LICENSE.txt"),
+            encoding: "utf-8",
+          },
+        },
+      }),
     ],
     build: {
       rollupOptions: {
